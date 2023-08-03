@@ -1,0 +1,129 @@
+/* Overall - About */
+.about {
+    padding-bottom: 50px;
+}
+
+.about .about-card-contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+.about .about-card-contain .flip-box {
+    background-color: transparent;
+    margin: 10px 50px;
+}
+
+
+/* This container is needed to position the front and back side */
+.about .about-card-contain .flip-box-inner {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.about .about-card-contain .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+.about .about-card-contain .flip-box-front,
+.about .about-card-contain .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+.about .about-card-contain .flip-box-front img {
+    width: 300px;
+    height: 350px;
+    border: 2px solid white;
+    border-radius: 35%;
+    box-shadow: white 0px 5px 15px;
+    opacity: 0.8;
+}
+
+.about .about-card-contain .contain-about {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 350px;
+    border-radius: 35%;
+    color: #fff;
+    background-color: #00000050;
+}
+
+.about .about-card-contain .flip-box-front .text-card {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/* Style the back side */
+.about .about-card-contain .flip-box-back {
+    border-radius: 35%;
+    background-color: black;
+    color: white;
+    transform: rotateY(180deg);
+    box-shadow: #F26522 0px 5px 15px;
+}
+
+.about .about-card-contain .flip-box-back .text-card {
+    color: #F26522;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.about .about-card-contain .flip-box-back .text-contain-about {
+    margin: 20px;
+    text-align: justify;
+    font-size: 18px;
+}
+
+/* Tablet - About */
+@media only screen and (max-width: 1190px) {
+    .about .about-card-contain {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 50px;
+    }
+
+    .about .about-card-contain .flip-box {
+        margin: 10px;
+
+    }
+
+    .about .about-card-contain .flip-box-inner,
+    .about .about-card-contain .flip-box-front img,
+    .about .about-card-contain .contain-about {
+        width: 200px;
+        height: 250px;
+    }
+
+    .about .about-card-contain .flip-box-front .text-card,
+    .about .about-card-contain .flip-box-back .text-card {
+        font-size: 20px;
+    }
+
+    .about .about-card-contain .flip-box-back .text-contain-about {
+        font-size: 10px;
+    }
+}
+
+/* Mobile - About */
+@media only screen and (max-width: 690px) {
+    .about .about-card-contain {
+        flex-direction: column;
+    }
+}

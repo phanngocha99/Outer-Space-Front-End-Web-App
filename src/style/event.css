@@ -1,0 +1,131 @@
+/* Overall - Event */
+.event-card-contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 50px;
+}
+
+.event-card-contain .event-card-wrap {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.event-card-box {
+    width: 200px;
+    height: 400px;
+    cursor: pointer;
+    margin: 10px 50px;
+}
+
+.event-card-box .event-card-inner {
+    box-shadow: 0 0 30px 5px #ffffff6b;
+    border-radius: 20px;
+    width: 200px;
+    height: 400px;
+    position: relative;
+    top: 0;
+    overflow: hidden;
+}
+
+.event-card-box .event-card-inner img {
+    width: 200px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.event-card-box .event-card-inner .event-card-info {
+    position: absolute;
+    top: 210px;
+    background-color: #000000d2;
+    width: 200px;
+    height: 400px;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.event-card-box .event-card-inner .event-card-info .event-card-title {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.event-card-box .event-card-inner .event-card-info .event-card-author {
+    color: wheat;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.event-card-box .event-card-inner .event-card-audit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.event-card-box .event-card-inner .event-card-info .event-card-date {
+    color: wheat;
+    font-size: 15px;
+}
+
+.event-card-box .event-card-inner .event-card-info .event-card-status {
+    color: yellow;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.event-card-box .event-card-inner .event-card-info .event-card-date-left {
+    color: yellow;
+    font-size: 15px;
+}
+
+.event-card-box .event-card-inner .event-card-info .event-card-date-left span {
+    color: #F26522;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.event-card-box .event-card-inner .event-card-info i {
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.event-card-box .event-card-inner .event-card-info .event-card-detail {
+    color: #fff;
+    font-size: 15px;
+    text-align: justify;
+    line-height: 20px;
+}
+
+.event-card-box:hover .event-card-inner {
+    box-shadow: 0 0 30px 5px #f264226f;
+}
+
+
+.event-card-box:hover .event-card-inner .event-card-info {
+    top: 0;
+    transition: 0.5s;
+    border-radius: 20px;
+}
+
+
+/* Tablet - Discover */
+@media only screen and (max-width: 1190px) {
+    .event-card-contain {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* Mobile - Discover */
+@media only screen and (max-width: 690px) {
+    .event-card-contain .event-card-wrap {
+        flex-direction: column;
+        gap: 50px;
+    }
+}

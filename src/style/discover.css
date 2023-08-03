@@ -1,0 +1,101 @@
+/* Overall - Discover */
+.discover-card-contain {
+    margin: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.discover-card-contain .discover-card-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.discover-card-contain .discover-card {
+    background-color: #ffffff15;
+    width: 200px;
+    height: 400px;
+    cursor: pointer;
+    margin: 10px 50px;
+}
+
+
+.discover-card-contain .discover-card:hover {
+    background-color: #F2652215;
+}
+
+.discover-card-contain .discover-card .discover-card-img {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid #fff;
+}
+
+.discover-card-contain .discover-card:hover .discover-card-img {
+    border: 1px solid #F26522;
+}
+
+.discover-card-contain .discover-card .discover-card-img img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.discover-card-contain .discover-card:hover .discover-card-img img {
+    transform: scale(1.25);
+    transition: 0.3s;
+}
+
+.discover-card-contain .discover-card .discover-text {
+    margin: 10px;
+    text-align: center;
+}
+
+.discover-card-contain .discover-card .discover-text h1 {
+    color: #fff;
+    font-size: 18px;
+}
+
+.discover-card-contain .discover-card:hover .discover-text h1 {
+    color: orange;
+}
+
+.discover-card-contain .discover-card .discover-text .card-dicover-info {
+    font-size: 15px;
+    margin: 10px;
+    color: wheat;
+}
+
+.discover-card-contain .discover-card .discover-text .card-dicover-info .card-discover-author {
+    font-weight: 700;
+}
+
+.discover-card-contain .discover-card .discover-text .card-discover-details {
+    color: #fff;
+    font-size: 15px;
+    text-align: justify;
+}
+
+.disable-event-card {
+    background-color: rgba(128, 128, 128, 0.586) !important;
+}
+
+/* Tablet - Discover */
+@media only screen and (max-width: 1190px) {
+    .discover-card-contain {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* Mobile - Discover */
+@media only screen and (max-width: 690px) {
+    .discover-card-contain .discover-card-wrap {
+        flex-direction: column;
+        gap: 50px;
+    }
+}

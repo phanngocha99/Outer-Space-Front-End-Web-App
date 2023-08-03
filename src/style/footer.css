@@ -1,0 +1,38 @@
+/* Overall - Footer */
+.lunah {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+    font-size: 15px;
+    margin: 10px;
+}
+
+.footer a:hover {
+    background-color: #F26522;
+}
+
+.footer a {
+    background-color: #f2642276;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.footer span {
+    padding: 10px;
+    color: #fff;
+}
+
+.footer i {
+    color: red;
+    padding: 0px 10px;
+    font-size: 15px;
+}
+
+/* Tablet - Footer */
+@media only screen and (max-width: 1190px) {
+    .lunah {
+        font-size: 10px;
+    }
+}

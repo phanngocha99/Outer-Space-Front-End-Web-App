@@ -1,0 +1,258 @@
+/* Overall - Header */
+
+header {
+    width: 100%;
+    height: 200px;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 100000;
+    transition: 0.6s;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* Overall - Logo */
+
+header .logo i {
+    margin-left: 50px;
+    width: 100%;
+    font-size: 70px;
+    color: #F26522;
+}
+
+
+/* Overall - Navbar */
+header .nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0;
+}
+
+header .nav-menu li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+header .nav-menu li {
+    padding: 20px;
+    border-radius: 5px;
+
+}
+
+header .nav-menu li:hover {
+    transition: ease-in 0.2s;
+    background: #F26522;
+}
+
+/* Overall - LoginButton */
+header .login-contain {
+    display: flex;
+    gap: 10px;
+}
+
+header .login-contain a {
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+    padding: 15px;
+    border-radius: 25px;
+    background-color: #f2642276;
+    display: flex;
+    text-transform: uppercase;
+    margin-right: 20px;
+}
+
+header .login-contain a:hover {
+    transition: linear 0.2s;
+    cursor: pointer;
+    background: #F26522;
+}
+
+header .login-contain .login-btn,
+header .login-contain .register-btn {
+    margin-right: 10px;
+}
+
+header .login-contain i {
+    font-size: 15px;
+}
+
+/* Overall - Header Sticky */
+header.sticky {
+    background: black;
+    height: 100px;
+    transition: 0.6s;
+}
+
+header.sticky .logo i {
+    font-size: 70px;
+}
+
+
+header.sticky .login-contain a {
+    padding: 10px;
+    background-color: #f2642276;
+}
+
+header.sticky .login-contain a:hover {
+    background-color: #F26522;
+    transition: linear 0.2s;
+
+}
+
+/* Overall - Navbar Reponsive */
+
+#btn-nav {
+    outline: none;
+    border: none;
+    display: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #f2642276;
+    font-size: 20px;
+    color: #fff;
+}
+
+#btn-nav:hover {
+    background: #F26522;
+}
+
+#nav-menu.active {
+    bottom: 0;
+}
+
+/* Tablet */
+@media only screen and (max-width: 1190px) {
+
+    /* Tablet - Logos */
+    header .logo i,
+    header.sticky .logo i {
+        font-size: 50px;
+        margin-left: 10px;
+    }
+
+    /* Tablet - Navbar */
+    header .nav-menu li {
+        padding: 10px;
+    }
+
+    header .nav-menu li a {
+        font-size: 15px;
+    }
+
+    /* Tablet - LoginButton */
+    header .login-contain {
+        gap: 5px;
+    }
+
+    header .login-contain a {
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    header .login-contain .login-btn,
+    header .login-contain .register-btn {
+        display: none;
+    }
+
+    /* Tablet - HeaderSticky */
+    header.sticky .logo i {
+        font-size: 40px;
+        margin-left: 5px;
+    }
+
+    header.sticky .nav-menu li {
+        padding: 10px;
+    }
+
+    header.sticky .nav-menu li a {
+        font-size: 15px;
+
+    }
+
+    header.sticky .login-contain {
+        gap: 5px;
+    }
+
+    header.sticky .login-contain a {
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    header.sticky .login-contain .login-btn,
+    header.sticky .login-contain .register-btn {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media (max-width:690px) {
+
+    /* Mobile - Navbar */
+    header #btn-nav {
+        display: block;
+    }
+
+    #nav-menu {
+        border: 1px solid #F26522;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        width: 90%;
+        height: 70%;
+        justify-content: center !important;
+        transition: all 0.5s;
+        bottom: -100%;
+        right: 5%;
+    }
+
+    #nav-menu li a,
+    header.sticky #nav-menu li a {
+        width: 100%;
+        padding: 15px 25px;
+        font-size: 15px;
+        border-radius: 10px 10px 0px 0px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.449);
+
+    }
+
+    header #nav-menu li,
+    header.sticky #nav-menu li {
+        margin: 20px;
+        text-align: center;
+    }
+
+    header #nav-menu li:hover,
+    header.sticky #nav-menu li:hover {
+        background: transparent;
+    }
+
+    header #nav-menu a:hover,
+    header.sticky #nav-menu a:hover {
+        transition: 0.3s;
+        background: #F26522;
+    }
+
+    /* Mobile - LoginButton */
+    header .btn-login a {
+        margin-right: 10px;
+    }
+
+    header .btn-login .login-btn-text {
+        display: none;
+    }
+
+    header .btn-login svg {
+        width: 20px;
+    }
+}
