@@ -12,7 +12,7 @@ html {
 }
 
 body {
-  background-image: url(../public/img/background.jpeg);
+  background-image: url(./img/background.jpeg);
 }
 
 a {
