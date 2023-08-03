@@ -113,6 +113,10 @@
     border-radius: 20px;
 }
 
+.disable-event-card {
+    background-color: rgba(128, 128, 128, 0.586) !important;
+}
+
 
 /* Tablet - Discover */
 @media only screen and (max-width: 1190px) {
