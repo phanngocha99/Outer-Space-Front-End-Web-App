@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/outer-space/static/css/main.5a9dd76f.css",
+    "main.js": "/outer-space/static/js/main.23d537ef.js",
+    "static/js/787.dcd1344d.chunk.js": "/outer-space/static/js/787.dcd1344d.chunk.js",
+    "static/media/background.jpeg": "/outer-space/static/media/background.e20e72f4f62e292d6964.jpeg",
+    "index.html": "/outer-space/index.html",
+    "main.5a9dd76f.css.map": "/outer-space/static/css/main.5a9dd76f.css.map",
+    "main.23d537ef.js.map": "/outer-space/static/js/main.23d537ef.js.map",
+    "787.dcd1344d.chunk.js.map": "/outer-space/static/js/787.dcd1344d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5a9dd76f.css",
+    "static/js/main.23d537ef.js"
+  ]
+}
