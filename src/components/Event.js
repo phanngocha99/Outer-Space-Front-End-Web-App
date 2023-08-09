@@ -1,5 +1,6 @@
 import '../style/event.css'
 import { eventData } from '../data/data-event'
+import event from '../img/event-moon.jpg'
 
 export default function Event() {
     return (
@@ -48,11 +49,10 @@ export default function Event() {
 }
 
 function EventContent({ title, details, author, date, status }) {
-    console.log(status === 'SẮP DIỄN RA')
     return (
         <a className="event-card-box" href="#banner-home">
             <div className="event-card-inner">
-                <img src='./img/event-moon.jpg' alt='event' />
+                <img src={event} alt='event' />
                 <div className={status === 'SẮP DIỄN RA' ? "event-card-info" : "event-card-info disable-event-card"}>
                     <div className="event-card-title">
                         {title}

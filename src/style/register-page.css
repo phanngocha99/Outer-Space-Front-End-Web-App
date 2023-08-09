@@ -1,0 +1,217 @@
+/* register - Welcome */
+.registerForm-wrap {
+    width: 100%;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.registerForm-contain {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    box-shadow: 10px 5px 35px 25px rgba(255, 255, 255, 0.35);
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.register-welcome {
+    height: 400px;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
+    align-items: center;
+    border-right: dashed 1px #f26422bc;
+}
+
+.register-welcome::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.12);
+    width: 25%;
+    height: 100%;
+    transform: skewX(-25deg);
+    transform-origin: bottom left;
+    z-index: 1;
+    animation: shadowing 5s linear -2s infinite;
+}
+
+.register-welcome-contain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+@keyframes shadowing {
+    from {
+        margin-left: -100%;
+    }
+
+    to {
+        margin-left: 100%;
+    }
+}
+
+.register-icon svg {
+    width: 75px;
+    background-color: black;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.register-icon svg path {
+    fill: white;
+
+}
+
+.register-welcome-astronaut {
+    margin-top: 15px;
+    font-size: 20px;
+    color: white;
+    font-weight: bolder;
+    animation: changeColor 3s linear 0s infinite;
+}
+
+@keyframes changeColor {
+    from {
+        color: white;
+    }
+
+    to {
+        color: orange;
+    }
+}
+
+.register-welcome-text {
+    margin-top: 15px;
+    font-size: 35px;
+    color: #F26522;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+/* register - Form */
+
+
+.register-form {
+    height: 400px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+.register-form-contain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+
+}
+
+form .input-group {
+    position: relative;
+    margin-bottom: 50px;
+    z-index: 5;
+    background-color: black;
+}
+
+form .input-group input {
+    font-size: 20px;
+    padding: 20px 40px 20px 0px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    color: #fff;
+}
+
+form .input-group label {
+    font-size: 30px;
+    position: absolute;
+    top: -35px;
+    left: 0;
+    font-size: 25px;
+    padding: 10px 0px;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+    z-index: 5;
+    color: #F26522;
+    font-size: 25px;
+}
+
+.input-group .icon-eye {
+    position: absolute;
+    top: 15px;
+    left: 360px;
+    cursor: pointer;
+    z-index: 3;
+    width: 10%;
+}
+
+.input-group .icon-eye path {
+    fill: #F26522;
+}
+
+
+
+.messageregister {
+    margin-top: -20px;
+}
+
+form .register-submit .submit-btn {
+    position: relative;
+    padding: 10px 10px;
+    text-transform: uppercase;
+    background-color: #f2642276;
+    color: white;
+    font-weight: bolder;
+    border-radius: 7px;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 25px;
+    letter-spacing: 3px;
+    border: none;
+    outline: none;
+}
+
+form .register-submit .submit-btn:hover {
+    background-color: #F26522;
+    z-index: 5;
+    border-radius: 7px;
+    box-shadow: #f2642276 0px 0px 20px 10px;
+}
+
+.successregister,
+.Errregister,
+.Catchregister {
+    display: none;
+    font-family: monospace;
+    font-size: 15px;
+    color: yellow;
+}
+
+@media screen and (max-width:1050px) {
+    .registerForm-contain {
+        flex-direction: column;
+    }
+
+    .register-welcome {
+        border-right: none;
+        border-bottom: dashed 1px #f26422bc;
+
+    }
+
+}

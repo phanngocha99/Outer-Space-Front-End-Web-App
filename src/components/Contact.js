@@ -1,4 +1,5 @@
 import '../style/contact.css'
+import contact from '../img/contact.jpg'
 
 export default function Contact() {
     return (
@@ -10,7 +11,7 @@ export default function Contact() {
                 đích tốt đẹp để cùng nhau phát triển. Hãy liên hệ với chúng tôi ! </p>
 
             <div className="contact-card-contain">
-                <img src="./img/contact.jpg" alt="contact" />
+                <img src={contact} alt="contact" />
                 <div className="contact-info">
                     <div className="connect-title">
                         <p>

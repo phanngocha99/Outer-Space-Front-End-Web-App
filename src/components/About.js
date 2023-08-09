@@ -1,5 +1,10 @@
 import '../style/about.css'
 import { aboutData } from '../data/data-about'
+import aboutMission from '../img/about-sumenh.jpg'
+import aboutActivity from '../img/about-hoatdong.jpg'
+import aboutHistory from '../img/about-lichsu.jpg'
+
+
 
 export default function Banner() {
     return (
@@ -16,22 +21,22 @@ export default function Banner() {
 
             <div className="about-card-contain">
 
-                <AboutContent title={aboutData[0].title} details={aboutData[0].details} />
-                <AboutContent title={aboutData[1].title} details={aboutData[1].details} />
-                <AboutContent title={aboutData[2].title} details={aboutData[2].details} />
+                <AboutContent title={aboutData[0].title} details={aboutData[0].details} img={aboutMission} />
+                <AboutContent title={aboutData[1].title} details={aboutData[1].details} img={aboutActivity} />
+                <AboutContent title={aboutData[2].title} details={aboutData[2].details} img={aboutHistory} />
 
             </div >
         </div >
     )
 }
 
-function AboutContent({ title, details }) {
+function AboutContent({ title, details, img }) {
     return (
         <div className="flip-box card ">
             <div className="flip-box-inner">
                 <div className="flip-box-front">
                     <div>
-                        <img src="./img/about-sumenh.jpg" alt="about-sumenh" />
+                        <img src={img} alt="about-sumenh" />
                         <div className="contain-about" href="#banner-home">
                             <div className="text-card">{title}</div>
                         </div>

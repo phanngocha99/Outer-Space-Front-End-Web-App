@@ -1,5 +1,7 @@
 import '../style/news.css'
 import { newsData } from '../data/data-news'
+import news from '../img/news-mua-sao-bang-delta-quaris.jpg'
+
 
 export default function News() {
     return (
@@ -44,7 +46,7 @@ function NewsContent({ title, details, author, date }) {
         <a className="news-card-box" href="#banner-home">
             <div className='news-card-inner'>
                 <div className="news-card-behind"></div>
-                <img src="./img/news-mua-sao-bang-delta-quaris.jpg" alt="news" />
+                <img src={news} alt="news" />
                 <div className="news-card-front">
                     <p className='news-card-details'>{details}</p>
                     <i className='bx bx-right-arrow-alt'></i>

@@ -1,5 +1,6 @@
 import '../style/discover.css'
 import { discoverData } from '../data/data-discover'
+import discover from '../img/dcv-muatrenhanhtinh.png'
 
 export default function Discover() {
     return (
@@ -46,7 +47,7 @@ function DiscoverContent({ title, details, author, date }) {
     return (
         <a className="discover-card" href="#banner-home">
             <div className='discover-card-img'>
-                <img src="./img/dcv-muatrenhanhtinh.png" alt="discover" />
+                <img src={discover} alt="discover" />
             </div>
             <div className="discover-text">
                 <h1 className='discover-text-title'>{title}</h1>
