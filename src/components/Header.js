@@ -44,13 +44,13 @@ export default function Header() {
             {!username && (
                 <div className="login-contain">
                     <div className="btn-login">
-                        <Link to="/login">
+                        <Link to="/outer-space/login">
                             <div className="login-btn">đăng nhập</div>
                             <i className='bx bx-chevron-right-circle'></i>
                         </Link>
                     </div>
                     <div className="btn-register">
-                        <Link to="/register">
+                        <Link to="/outer-space/register">
                             <div className="register-btn">đăng ký</div>
                             <i className='bx bx-chevron-down-circle'></i>
                         </Link>
@@ -64,7 +64,7 @@ export default function Header() {
 
 function Logo() {
     return (
-        <Link to="/" href="#banner-home" className='logo'>
+        <Link to="/outer-space" href="#banner-home" className='logo'>
             <i className='bx bx-atom'></i>
         </Link>
     )
@@ -80,11 +80,11 @@ function Navbar() {
         <nav>
             <div className="nav-wrap">
                 <ul id="nav-menu" className={showNav ? "nav-menu" : "nav-menu active"}>
-                    <li><Link to="/#about">về outerspace</Link></li>
-                    <li><a href="#news-home">tin tức</a></li>
-                    <li><a href="#discover-home">khám phá</a></li>
-                    <li><a href="#event-home">sự kiện</a></li>
-                    <li><a href="#contact-home">liên hệ</a></li>
+                    <li><Link to="/outer-space/#discover-home">về outerspace</Link></li>
+                    <li><Link to="/outer-space/#discover-home">tin tức</Link></li>
+                    <li><Link to="/outer-space/#discover-home">khám phá</Link></li>
+                    <li><Link to="/outer-space/#event-home">sự kiện</Link></li>
+                    <li><Link to="/outer-space/#contact-home">liên hệ</Link></li>
                 </ul>
             </div>
             <button id="btn-nav" onClick={handleClick}>

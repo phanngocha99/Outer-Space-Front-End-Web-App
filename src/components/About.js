@@ -6,7 +6,7 @@ import aboutHistory from '../img/about-lichsu.jpg'
 
 
 
-export default function Banner() {
+export default function About() {
     return (
         <div id="about-home" className="bg-grey about">
             <div className="title">

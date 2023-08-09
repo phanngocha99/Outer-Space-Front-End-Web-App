@@ -11,7 +11,7 @@ var salt = bcrypt.genSaltSync(10);
 var secret = bcrypt.genSaltSync(10);
 
 const app = express();
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' })); //if set credentials, cors must have more infomation 
+app.use(cors({ credentials: true, origin: 'http://localhost:3000/outerspace' })); //if set credentials, cors must have more infomation 
 app.use(express.json());
 app.use(cookieParser());
 
