@@ -1,5 +1,4 @@
 import '../style/about.css'
-import { aboutData } from '../data/data-about'
 import aboutMission from '../img/about-sumenh.jpg'
 import aboutActivity from '../img/about-hoatdong.jpg'
 import aboutHistory from '../img/about-lichsu.jpg'
