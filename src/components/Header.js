@@ -15,7 +15,7 @@ export default function Header() {
                     setUserInfo(userInfo);
                 })
             })
-    });
+    }, []);
 
     async function logout() {
         await fetch('http://localhost:8000/logout', {
@@ -44,13 +44,13 @@ export default function Header() {
             {!username && (
                 <div className="login-contain">
                     <div className="btn-login">
-                        <Link to="/outer-space/login">
+                        <Link to="/login">
                             <div className="login-btn">đăng nhập</div>
                             <i className='bx bx-chevron-right-circle'></i>
                         </Link>
                     </div>
                     <div className="btn-register">
-                        <Link to="/outer-space/register">
+                        <Link to="/register">
                             <div className="register-btn">đăng ký</div>
                             <i className='bx bx-chevron-down-circle'></i>
                         </Link>
@@ -80,11 +80,11 @@ function Navbar() {
         <nav>
             <div className="nav-wrap">
                 <ul id="nav-menu" className={showNav ? "nav-menu" : "nav-menu active"}>
-                    <li><Link to="/outer-space/#discover-home">về outerspace</Link></li>
-                    <li><Link to="/outer-space/#discover-home">tin tức</Link></li>
-                    <li><Link to="/outer-space/#discover-home">khám phá</Link></li>
-                    <li><Link to="/outer-space/#event-home">sự kiện</Link></li>
-                    <li><Link to="/outer-space/#contact-home">liên hệ</Link></li>
+                    <li><a href="/#about-home">về outerspace</a></li>
+                    <li><a href="/#news-home">tin tức</a></li>
+                    <li><a href="/#discover-home">khám phá</a></li>
+                    <li><a href="/#event-home">sự kiện</a></li>
+                    <li><a href="/#contact-home">liên hệ</a></li>
                 </ul>
             </div>
             <button id="btn-nav" onClick={handleClick}>
