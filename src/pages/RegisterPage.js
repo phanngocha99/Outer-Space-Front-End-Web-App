@@ -9,7 +9,7 @@ export default function RegisterPage() {
     const [username, setUserName] = useState('');
     const [password, setPassWord] = useState('');
     async function register() {
-        const response = await fetch('http://localhost:8000/register', {
+        const response = await fetch('https://outer-space-api.vercel.app/register', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({ username, password }),

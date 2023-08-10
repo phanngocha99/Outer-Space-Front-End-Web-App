@@ -7,7 +7,7 @@ import { useContext, useEffect, useState } from 'react';
 export default function Header() {
     const { userInfo, setUserInfo } = useContext(UserContext);
     useEffect(() => {  //run everytime when mount this component
-        fetch('http://localhost:8000/profile',
+        fetch('https://outer-space-api.vercel.app/profile',
             {
                 credentials: 'include',
             }).then(response => {
@@ -18,7 +18,7 @@ export default function Header() {
     }, []);
 
     async function logout() {
-        await fetch('http://localhost:8000/logout', {
+        await fetch('https://outer-space-api.vercel.app/logout', {
             credentials: 'include',
             method: 'POST'
         });
@@ -64,7 +64,7 @@ export default function Header() {
 
 function Logo() {
     return (
-        <Link to="/outer-space" href="#banner-home" className='logo'>
+        <Link to="/" href="#banner-home" className='logo'>
             <i className='bx bx-atom'></i>
         </Link>
     )
