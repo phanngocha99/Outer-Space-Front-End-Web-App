@@ -21,9 +21,15 @@ export default function About() {
 
             <div className="about-card-contain">
 
-                <AboutContent title={aboutData[0].title} details={aboutData[0].details} img={aboutMission} />
-                <AboutContent title={aboutData[1].title} details={aboutData[1].details} img={aboutActivity} />
-                <AboutContent title={aboutData[2].title} details={aboutData[2].details} img={aboutHistory} />
+                <AboutContent title="MỤC TIÊU"
+                    details="OuterSpace là trang web thiên văn học nghiệp dư với mục đích giúp cho kiến thức và tin tức thiên văn học được tiếp cận một cách dễ dàng nhất nhằm lan tỏa niềm đam mê khoa học."
+                    img={aboutMission} />
+                <AboutContent title="HOẠT ĐỘNG"
+                    details="OuterSpace Webdite bao gồm: Chuyên mục Tin tức và chuyên mục Kiến thức thiên văn: được nghiên cứu hoặc dịch từ các website nước ngoài uy tín và được trích dẫn cụ thể. Chuyên mục Sự kiện: Cung cấp thông tin về các sự kiện thiên văn nổi bật sắp diễn ra."
+                    img={aboutActivity} />
+                <AboutContent title="LỊCH SỬ"
+                    details="OuterSpace Website: - Được tạo ra từ 19/01/2021- Đang được tiếp tục phát triển."
+                    img={aboutHistory} />
 
             </div >
         </div >
