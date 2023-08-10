@@ -13,7 +13,7 @@ export default function LoginPage() {
 
     async function login(e) {
         e.preventDefault();
-        const response = await fetch('https://outer-space-api.vercel.app//login', {
+        const response = await fetch('https://outer-space-api.vercel.app/login', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({ username, password }),
