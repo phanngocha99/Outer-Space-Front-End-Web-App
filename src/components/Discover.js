@@ -1,8 +1,17 @@
 import '../style/discover.css'
-import { discoverData } from '../data/data-discover'
-import discover from '../img/dcv-muatrenhanhtinh.png'
+import { formatISO9075 } from "date-fns";
+import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 
 export default function Discover() {
+    const [posts, setPosts] = useState([]);
+    useEffect(() => {
+        fetch('https://outer-space-api.vercel.app/post').then(response => {
+            response.json().then(posts => {
+                setPosts(posts);
+            });
+        });
+    }, [setPosts]);
     return (
         <div id="discover-home" className="bg-grey discover">
             <div className="title">
@@ -25,16 +34,14 @@ export default function Discover() {
             <div className="discover-card-contain">
 
                 <div className='discover-card-wrap'>
-                    <DiscoverContent title={discoverData[0].title} details={discoverData[0].details}
-                        author={discoverData[0].title} date={discoverData[0].title} />
-                    <DiscoverContent title={discoverData[1].title} details={discoverData[1].details}
-                        author={discoverData[1].author} date={discoverData[1].date} />
-                </div>
-                <div className='discover-card-wrap'>
-                    <DiscoverContent title={discoverData[2].title} details={discoverData[2].details}
-                        author={discoverData[2].author} date={discoverData[2].date} />
-                    <DiscoverContent title={discoverData[3].title} details={discoverData[3].details}
-                        author={discoverData[3].author} date={discoverData[3].date} />
+                    <>
+                        {
+                            posts.length > 0
+                            && posts.map((post, index) => (
+                                <DiscoverContent key={index} {...post} />
+                            ))}
+
+                    </>
                 </div>
 
             </div>
@@ -43,20 +50,21 @@ export default function Discover() {
     )
 }
 
-function DiscoverContent({ title, details, author, date }) {
+function DiscoverContent({ _id, title, summary, author, createdAt, cover }) {
     return (
-        <a className="discover-card" href="#banner-home">
+        <Link to={`/post/${_id}`
+        } className="discover-card" >
             <div className='discover-card-img'>
-                <img src={discover} alt="discover" />
+                <img src={'https://outer-space-api.vercel.app/' + cover} alt="discover" />
             </div>
             <div className="discover-text">
                 <h1 className='discover-text-title'>{title}</h1>
                 <div className='card-dicover-info'>
-                    <div className="card-discover-author">{author}</div>
-                    <div className="card-discover-date">{date}</div>
+                    <div className="card-discover-author">{author.username}</div>
+                    <div className="card-discover-date">{formatISO9075(new Date(createdAt))}</div>
                 </div>
-                <div className="card-discover-details">{details} </div>
+                <div className="card-discover-details">{summary} </div>
             </div>
-        </a>
+        </Link >
     )
 }

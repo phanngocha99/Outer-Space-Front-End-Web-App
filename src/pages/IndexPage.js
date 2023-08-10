@@ -4,6 +4,7 @@ import News from '../components/News.js';
 import Discover from '../components/Discover.js';
 import Event from '../components/Event.js';
 import Contact from '../components/Contact.js';
+import Footer from '../components/Footer.js';
 
 export default function IndexPage() {
     return (
@@ -15,6 +16,7 @@ export default function IndexPage() {
                 <Discover />
                 <Event />
                 <Contact />
+                <Footer />
             </main >
         </>
     )

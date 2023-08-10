@@ -1,9 +1,17 @@
 import '../style/news.css'
-import { newsData } from '../data/data-news'
-import news from '../img/news-mua-sao-bang-delta-quaris.jpg'
-
+import { formatISO9075 } from "date-fns";
+import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 
 export default function News() {
+    const [news, setNews] = useState([]);
+    useEffect(() => {
+        fetch('https://outer-space-api.vercel.app/news').then(response => {
+            response.json().then(news => {
+                setNews(news);
+            });
+        });
+    }, [setNews]);
     return (
         <div id="news-home" className="news">
             <div className="title">
@@ -24,41 +32,38 @@ export default function News() {
             </p>
 
             <div className="news-card-contain">
-                <div className='news-card-wrap'>
-                    <NewsContent title={newsData[0].title} details={newsData[0].details}
-                        author={newsData[0].title} date={newsData[0].title} />
-                    <NewsContent title={newsData[1].title} details={newsData[1].details}
-                        author={newsData[1].author} date={newsData[1].date} />
-                </div>
-                <div className='news-card-wrap'>
-                    <NewsContent title={newsData[2].title} details={newsData[2].details}
-                        author={newsData[2].author} date={newsData[2].date} />
-                    <NewsContent title={newsData[3].title} details={newsData[3].details}
-                        author={newsData[3].author} date={newsData[3].date} />
-                </div>
+
+                <>
+                    {
+                        news.length > 0
+                        && news.map((news, index) => (
+                            <NewsContent key={index} {...news} />
+                        ))}
+
+                </>
             </div >
         </div >
     )
 }
 
-function NewsContent({ title, details, author, date }) {
+function NewsContent({ _id, title, summary, author, createdAt, cover }) {
     return (
-        <a className="news-card-box" href="#banner-home">
+        <Link to={`/news/${_id}`} className="news-card-box" >
             <div className='news-card-inner'>
                 <div className="news-card-behind"></div>
-                <img src={news} alt="news" />
+                <img src={'https://outer-space-api.vercel.app/' + cover} alt="news" />
                 <div className="news-card-front">
-                    <p className='news-card-details'>{details}</p>
+                    <p className='news-card-details'>{summary}</p>
                     <i className='bx bx-right-arrow-alt'></i>
                 </div>
             </div>
             <div className="news-card-text">
                 <p className="news-card-title">{title}</p>
                 <div className="news-card-info">
-                    <div className="news-card-author">{author}</div>
-                    <div className="news-card-date">{date}</div>
+                    <div className="news-card-author">{author.username}</div>
+                    <div className="news-card-date">{formatISO9075(new Date(createdAt))}</div>
                 </div>
             </div>
-        </a>
+        </Link>
     )
 }

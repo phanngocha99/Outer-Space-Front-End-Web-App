@@ -1,8 +1,17 @@
 import '../style/event.css'
-import { eventData } from '../data/data-event'
-import event from '../img/event-moon.jpg'
+import { formatISO9075 } from "date-fns";
+import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 
 export default function Event() {
+    const [event, setEvent] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:8000/event').then(response => {
+            response.json().then(event => {
+                setEvent(event);
+            });
+        });
+    }, [setEvent]);
     return (
         <div id="event-home" className="event">
             <div className="title">
@@ -24,57 +33,45 @@ export default function Event() {
 
             <div className="event-card-contain">
                 <div className='event-card-wrap'>
-                    <EventContent title={eventData[0].title} details={eventData[0].details}
-                        author={eventData[0].author} date={eventData[0].date}
-                        status={eventData[0].status}
-                    />
-                    <EventContent title={eventData[1].title} details={eventData[1].details}
-                        author={eventData[1].author} date={eventData[1].date}
-                        status={eventData[1].status}
-                    />
-                </div>
-                <div className='event-card-wrap'>
-                    <EventContent title={eventData[2].title} details={eventData[2].details}
-                        author={eventData[2].author} date={eventData[2].date}
-                        status={eventData[2].status}
-                    />
-                    <EventContent title={eventData[3].title} details={eventData[3].details}
-                        author={eventData[3].author} date={eventData[3].date}
-                        status={eventData[3].status}
-                    />
+                    <>
+                        {
+                            event.length > 0
+                            && event.map((event, index) => (
+                                <EventContent key={index} {...event} />
+                            ))}
+
+                    </>
                 </div>
             </div>
         </div>
     )
 }
 
-function EventContent({ title, details, author, date, status }) {
+function EventContent({ _id, title, summary, author, createdAt, cover }) {
+    const oneDay = 24 * 60 * 60 * 1000;
+    const remain = Math.round(Math.abs((new Date(createdAt) - new Date()) / oneDay))
     return (
-        <a className="event-card-box" href="#banner-home">
+        <Link to={`/event/${_id}`} className="event-card-box">
             <div className="event-card-inner">
-                <img src={event} alt='event' />
-                <div className={status === 'SẮP DIỄN RA' ? "event-card-info" : "event-card-info disable-event-card"}>
+                <img src={'https://outer-space-api.vercel.app/' + cover} alt='event' />
+                <div className="event-card-info">
                     <div className="event-card-title">
                         {title}
                     </div>
                     <div className="event-card-audit">
                         <div className="event-card-author">
-                            {author}
+                            {author.username}
                         </div>
                         <div className="event-card-date">
-                            {date}
+                            {formatISO9075(new Date(createdAt))}
                         </div>
                     </div>
-                    <p className="event-card-status">
-                        {status}
-                    </p>
-                    <div className="event-card-date-left"> Còn <span>0</span> ngày</div>
                     <i className='bx bx-minus'></i>
                     <p className="event-card-detail">
-                        {details}
+                        {summary}
                     </p>
                 </div>
             </div>
-        </a>
+        </Link>
     )
 }

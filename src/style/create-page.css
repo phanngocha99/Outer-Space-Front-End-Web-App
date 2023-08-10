@@ -1,0 +1,89 @@
+.create-area {
+    margin-top: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+
+}
+
+.create-area form {
+    width: 1000px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+
+}
+
+.create-area input {
+    width: 1000px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    outline: none;
+
+}
+
+.create-area #title {
+    font-size: 20px;
+    color: #F26522;
+    text-transform: capitalize;
+}
+
+.create-area #title::placeholder {
+    color: #f264228a;
+}
+
+.create-area #summary {
+    font-size: 15px;
+    color: #fff;
+
+}
+
+.create-area #file {
+    font-size: 15px;
+    color: #fff;
+}
+
+.create-area .quill-wrap {
+    background-color: #ffffff;
+    width: 1000px;
+    height: 42px;
+
+}
+
+.create-area .quill {
+    color: #ffffff;
+}
+
+.create-area .create-btn {
+    position: relative;
+    padding: 10px 10px;
+    text-transform: capitalize;
+    background-color: #f2642276;
+    color: white;
+    font-weight: bolder;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    width: 1000px;
+}
+
+.create-area .create-btn:hover {
+    background-color: #F26522;
+    z-index: 5;
+    border-radius: 7px;
+    box-shadow: #f2642276 0px 0px 20px 10px;
+}

@@ -6,16 +6,21 @@ import { useContext, useEffect, useState } from 'react';
 
 export default function Header() {
     const { userInfo, setUserInfo } = useContext(UserContext);
-    useEffect(() => {  //run everytime when mount this component
-        fetch('https://outer-space-api.vercel.app/profile',
-            {
-                credentials: 'include',
-            }).then(response => {
-                response.json().then(userInfo => {
-                    setUserInfo(userInfo);
+
+    useEffect(() => {//run everytime when mount this component
+        function fetchProfile() {
+            fetch('https://outer-space-api.vercel.app/profile',
+                {
+                    credentials: 'include',
+                }).then(response => {
+                    response.json().then(userInfo => {
+                        setUserInfo(userInfo);
+                    })
                 })
-            })
-    }, []);
+        }
+        fetchProfile()
+    }, [setUserInfo]);
+
 
     async function logout() {
         await fetch('https://outer-space-api.vercel.app/logout', {
@@ -35,7 +40,7 @@ export default function Header() {
             {(username) && (
 
                 <div className="login-contain">
-                    <Link to='/create' className='create-new-post-btn'>Create new post</Link>
+                    <Link to='/create-post' className='create-new-post-btn'>Create new post</Link>
                     <div className='logout-btn' onClick={logout}>Logout</div>
                     <div className='profile-user'><p> {username}</p></div>
                 </div>
