@@ -96,13 +96,15 @@ export default function LoginPage() {
                             </div>
                         </div>
 
-                        {
-                            status === "request-failed" ? 'Đăng nhập chưa thành công. Vui lòng đăng nhập lại' : ''
-                        }
+                        <div className="status">
+                            {
+                                status === "request-failed" ? 'Đăng nhập chưa thành công. Vui lòng đăng nhập lại' : ''
+                            }
 
-                        {
-                            status === "credentials-failed" ? 'Tài khoản hoặc mật khẩu không đúng. Vui lòng đăng nhập lại' : ''
-                        }
+                            {
+                                status === "credentials-failed" ? 'Tài khoản hoặc mật khẩu không đúng. Vui lòng đăng nhập lại' : ''
+                            }
+                        </div>
 
                         <div className="login-submit">
                             <button type='button' className="submit-btn" id="submitBtn" onClick={login}>ĐĂNG NHẬP</button>
