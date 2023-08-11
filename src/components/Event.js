@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 export default function Event() {
     const [event, setEvent] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:8000/event').then(response => {
+        fetch('https://outer-space-api.vercel.app/event').then(response => {
             response.json().then(event => {
                 setEvent(event);
             });
