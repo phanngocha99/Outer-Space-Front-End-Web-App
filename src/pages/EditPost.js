@@ -41,6 +41,8 @@ export default function EditPost() {
         });
         if (response.status === 200) {
             setRedirect(true);
+        } else {
+            alert('Đã xảy ra lỗi: ' + response.status)
         }
     }
 

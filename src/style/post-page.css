@@ -13,14 +13,31 @@
 
 .post-page-wrap h1 {
     font-size: 50px;
+    color: #F26522;
 }
 
-.post-page-wrap h2,
+.post-page-wrap h2 {
+    color: #fff;
+    margin-top: 30px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+    width: 80%;
+    text-align: center;
+}
+
 .content {
     color: #fff;
     margin-top: 30px;
     font-weight: lighter;
     margin-bottom: 30px;
+    width: 80%;
+    text-align: justify;
+}
+
+.content h2 {
+    text-align: justify;
+    color: #F26522;
+
 }
 
 .post-page-wrap time {
