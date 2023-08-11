@@ -2,27 +2,30 @@ import '../style/news.css'
 import { formatISO9075 } from "date-fns";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
+import GenerateRandomImage from './RandomImage'
 
 export default function News() {
     const [news, setNews] = useState([]);
     useEffect(() => {
-        fetch('https://outer-space-api.vercel.app/news').then(response => {
-            response.json().then(news => {
-                setNews(news);
+        fetch('https://outer-space-api.vercel.app/news')
+            .then(response => {
+                response.json().then(news => {
+                    setNews(news);
+                });
             });
-        });
     }, [setNews]);
+
     return (
         <div id="news-home" className="news">
             <div className="title">
                 <div>TIN TỨC</div>
-                <div>
+                {/* <div>
                     <a href="#banner-home">
                         <span className="btn">
                             XEM TẤT CẢ
                         </span>
                     </a>
-                </div>
+                </div> */}
             </div>
 
             <p className="detail">
@@ -32,7 +35,6 @@ export default function News() {
             </p>
 
             <div className="news-card-contain">
-
                 <div className="news-card-wrap">
                     <>
                         {
@@ -50,12 +52,12 @@ export default function News() {
     )
 }
 
-function NewsContent({ _id, title, summary, author, createdAt, cover }) {
+function NewsContent({ _id, title, summary, author, createdAt }) {
     return (
         <Link to={`/news/${_id}`} className="news-card-box" >
             <div className='news-card-inner'>
                 <div className="news-card-behind"></div>
-                <img src={'https://outer-space-api.vercel.app/' + cover} alt="news" />
+                <GenerateRandomImage />
                 <div className="news-card-front">
                     <p className='news-card-details'>{summary}</p>
                     <i className='bx bx-right-arrow-alt'></i>

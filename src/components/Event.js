@@ -2,27 +2,29 @@ import '../style/event.css'
 import { formatISO9075 } from "date-fns";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
+import GenerateRandomImage from './RandomImage';
 
 export default function Event() {
     const [event, setEvent] = useState([]);
     useEffect(() => {
-        fetch('https://outer-space-api.vercel.app/event').then(response => {
-            response.json().then(event => {
-                setEvent(event);
+        fetch('https://outer-space-api.vercel.app/event')
+            .then(response => {
+                response.json().then(event => {
+                    setEvent(event);
+                });
             });
-        });
     }, [setEvent]);
     return (
         <div id="event-home" className="event">
             <div className="title">
                 <div>SỰ KIỆN</div>
-                <div>
+                {/* <div>
                     <a href="#banner-home">
                         <span className="btn">
                             XEM TẤT CẢ
                         </span>
                     </a>
-                </div>
+                </div> */}
 
 
             </div>
@@ -47,13 +49,13 @@ export default function Event() {
     )
 }
 
-function EventContent({ _id, title, summary, author, createdAt, cover }) {
+function EventContent({ _id, title, summary, author, createdAt }) {
     const oneDay = 24 * 60 * 60 * 1000;
     const remain = Math.round(Math.abs((new Date(createdAt) - new Date()) / oneDay))
     return (
         <Link to={`/event/${_id}`} className="event-card-box">
             <div className="event-card-inner">
-                <img src={'https://outer-space-api.vercel.app/' + cover} alt='event' />
+                <GenerateRandomImage />
                 <div className="event-card-info">
                     <div className="event-card-title">
                         {title}

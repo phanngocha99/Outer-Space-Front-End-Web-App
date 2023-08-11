@@ -2,27 +2,29 @@ import '../style/discover.css'
 import { formatISO9075 } from "date-fns";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
+import GenerateRandomImage from './RandomImage';
 
 export default function Discover() {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-        fetch('https://outer-space-api.vercel.app/post').then(response => {
-            response.json().then(posts => {
-                setPosts(posts);
+        fetch('https://outer-space-api.vercel.app/post')
+            .then(response => {
+                response.json().then(posts => {
+                    setPosts(posts);
+                });
             });
-        });
     }, [setPosts]);
     return (
         <div id="discover-home" className="bg-grey discover">
             <div className="title">
                 <div>KHÁM PHÁ</div>
-                <div>
+                {/* <div>
                     <a href="#banner-home">
                         <span className="btn">
                             XEM TẤT CẢ
                         </span>
                     </a>
-                </div>
+                </div> */}
             </div>
 
             <p className="detail">Với tiêu chí “khoa học cho mọi người”, OuterSpace luôn mong muốn
@@ -50,12 +52,12 @@ export default function Discover() {
     )
 }
 
-function DiscoverContent({ _id, title, summary, author, createdAt, cover }) {
+function DiscoverContent({ _id, title, summary, author, createdAt }) {
     return (
         <Link to={`/post/${_id}`
         } className="discover-card" >
             <div className='discover-card-img'>
-                <img src={'https://outer-space-api.vercel.app/' + cover} alt="discover" />
+                <GenerateRandomImage />
             </div>
             <div className="discover-text">
                 <h1 className='discover-text-title'>{title}</h1>

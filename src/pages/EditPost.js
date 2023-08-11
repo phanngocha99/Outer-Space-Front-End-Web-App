@@ -9,7 +9,7 @@ export default function EditPost() {
     const [title, setTitle] = useState('');
     const [summary, setSummary] = useState('');
     const [content, setContent] = useState('');
-    const [files, setFiles] = useState('');
+    // const [files, setFiles] = useState('');
     const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
@@ -30,12 +30,13 @@ export default function EditPost() {
         data.set('summary', summary);
         data.set('content', content);
         data.set('id', id);
-        if (files?.[0]) {
-            data.set('file', files?.[0]);
-        }
+        // if (files?.[0]) {
+        //     data.set('file', files?.[0]);
+        // }
         const response = await fetch('https://outer-space-api.vercel.app/post', {
             method: 'PUT',
-            body: data,
+            body: JSON.stringify({ title, summary, content, id }),
+            headers: { 'Content-type': 'application/json' },
             credentials: 'include',
         });
         if (response.status === 200) {
@@ -48,22 +49,26 @@ export default function EditPost() {
     }
 
     return (
-        <div className="edit-post-page">
+        <div className='edit-area'>
+            <h1>CHỈNH SỬA BÀI VIẾT</h1>
             <form >
-                <input type="title"
+                <input type="title" id="title" maxlength="30"
                     placeholder={'Title'}
                     value={title}
                     onChange={ev => setTitle(ev.target.value)} />
-                <input type="summary"
+                <input type="summary" id="summary" maxlength="50"
                     placeholder={'Summary'}
                     value={summary}
                     onChange={ev => setSummary(ev.target.value)} />
-                <input type="file"
-                    onChange={ev => setFiles(ev.target.files)} />
-                <Editor onChange={setContent} value={content} />
+                {/* <input type="file"
+                    onChange={ev => setFiles(ev.target.files)} /> */}
             </form>
-            <button style={{ marginTop: '5px' }} onClick={updatePost}>Update post</button>
-
+            <div className='quill-wrap'>
+                <div className='quill'>
+                    <Editor value={content} onChange={setContent} />
+                    <button className='edit-btn' onClick={updatePost}>CHỈNH SỬA </button>
+                </div>
+            </div>
         </div>
 
     );

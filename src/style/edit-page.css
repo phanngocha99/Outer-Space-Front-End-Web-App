@@ -1,8 +1,95 @@
-.edit-post-page {
-    color: #fff;
+.edit-area {
     margin-top: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+
 }
 
-.edit-post-page form {
-    margin-top: 300px;
+.edit-area h1 {
+    color: #F26522;
+    margin-bottom: 50px;
+}
+
+.edit-area .edit-btn {
+    padding: 15px;
+    text-transform: capitalize;
+    background-color: #f2642276;
+    color: white;
+    font-weight: bolder;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.edit-area .edit-btn:hover {
+    background-color: #f8793e;
+    z-index: 5;
+    border-radius: 7px;
+    box-shadow: #f2642276 0px 0px 20px 10px;
+}
+
+
+.edit-area form {
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+
+
+}
+
+.edit-area input {
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    outline: none;
+
+}
+
+.edit-area #title {
+    font-size: 20px;
+    color: #F26522;
+    text-transform: capitalize;
+}
+
+.edit-area #title::placeholder {
+    color: #f264228a;
+}
+
+.edit-area #summary {
+    font-size: 15px;
+    color: #fff;
+
+}
+
+.edit-area .quill-wrap {
+    background-color: #ffffff;
+    width: 80%;
+    height: 42px;
+
+}
+
+.edit-area .quill {
+    margin-top: -30px;
+    color: #ffffff;
+}
+
+/* TODO */
+#file {
+    display: none;
 }

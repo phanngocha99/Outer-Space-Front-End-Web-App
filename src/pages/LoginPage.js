@@ -20,7 +20,8 @@ export default function LoginPage() {
 
     async function login(e) {
         e.preventDefault();
-        const response = await fetch('https://outer-space-api.vercel.app/login', {
+
+        await fetch('https://outer-space-api.vercel.app/login', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             signal: AbortSignal.timeout(5000), //5 second timeout

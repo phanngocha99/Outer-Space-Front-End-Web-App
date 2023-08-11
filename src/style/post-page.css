@@ -1,4 +1,74 @@
 .post-page-wrap {
     color: #fff;
-    margin-top: 200px;
+    margin-top: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: #000000a9;
+    padding-top: 50px;
+}
+
+.post-page-wrap h1 {
+    font-size: 50px;
+}
+
+.post-page-wrap h2,
+.content {
+    color: #fff;
+    margin-top: 30px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+}
+
+.post-page-wrap time {
+    margin-top: 20px;
+    color: wheat;
+}
+
+.post-page-wrap .author {
+    margin-bottom: 20px;
+    color: wheat;
+    text-transform: capitalize;
+}
+
+.post-page-wrap .author span {
+    margin-bottom: 20px;
+    color: yellow;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.post-page-wrap .edit-btn {
+    padding: 10px;
+    text-transform: capitalize;
+    background-color: #f2642276;
+    color: white;
+    font-weight: bolder;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.post-page-wrap .edit-btn:hover {
+    background-color: yellow;
+    z-index: 5;
+    border-radius: 7px;
+    color: #000;
+}
+
+.post-page-wrap .image {
+    width: 50%;
+    height: 500px;
+}
+
+.post-page-wrap img {
+    width: 100%;
+    height: 100%;
 }

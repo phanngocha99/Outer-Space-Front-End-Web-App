@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
 import { UserContext } from "../components/UserContext";
 import { Link } from 'react-router-dom';
-
+import GenerateRandomImage from "../components/RandomImage";
 
 export default function NewsPage() {
     const [newsInfo, setNewsInfo] = useState(null);
@@ -24,16 +24,19 @@ export default function NewsPage() {
         <div className="post-page-wrap">
             <h1>{newsInfo.title}</h1>
             <time>{formatISO9075(new Date(newsInfo.createdAt))}</time>
-            <div className="author">by @{newsInfo.author.username}</div>
+            <div className="author">by <span>{newsInfo.author.username}</span></div>
             {userInfo?.id === newsInfo.author._id && (
                 <div className="edit-row">
                     <Link to={`/edit/news/${newsInfo._id}`} className="edit-btn" >
-                        Edit this news
+                        Edit this post
                     </Link>
                 </div>
             )}
+
+            <h2>{newsInfo.summary}</h2>
+
             <div className="image">
-                <img src={`https://outer-space-api.vercel.app/${newsInfo.cover}`} alt="" />
+                <GenerateRandomImage />
             </div>
             <div className="content" dangerouslySetInnerHTML={{ __html: newsInfo.content }} />
         </div>

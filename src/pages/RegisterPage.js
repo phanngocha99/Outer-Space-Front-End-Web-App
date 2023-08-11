@@ -6,10 +6,8 @@ export default function RegisterPage() {
     const [showEyeSlash, setShowEyeSlash] = useState(true);
     const [status, setStatus] = useState('');
 
-
     const [username, setUserName] = useState('');
     const [password, setPassWord] = useState('');
-
     async function register() {
         const response = await fetch('https://outer-space-api.vercel.app/register', {
             method: 'POST',
