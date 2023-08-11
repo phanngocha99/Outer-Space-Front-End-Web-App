@@ -35,13 +35,26 @@ export default function Header() {
 
     return (
         <header>
-            <Logo />
-            <Navbar />
+            <div className='logo-nav-wrap'>
+                <Logo />
+                <Navbar />
+            </div>
+
             {(username) && (
 
                 <div className="login-contain">
-                    <Link to='/create-post' className='create-new-post-btn'>Create new post</Link>
-                    <div className='logout-btn' onClick={logout}>Logout</div>
+                    <div className="btn-create-post">
+                        <Link to="/create-post">
+                            <div className="create-new-post-btn">Tạo Bài Viết</div>
+                            <i class='bx bx-edit'></i>
+                        </Link>
+                    </div>
+                    <div className="btn-logout">
+                        <Link to="/">
+                            <div className="logout-btn" onClick={logout}>Đăng Xuất</div>
+                            <i class='bx bx-card'></i>
+                        </Link>
+                    </div>
                     <div className='profile-user'><p> {username}</p></div>
                 </div>
             )}
