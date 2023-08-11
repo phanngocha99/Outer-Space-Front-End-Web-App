@@ -120,9 +120,9 @@
 
 /* Tablet - Discover */
 @media only screen and (max-width: 1190px) {
-    .event-card-contain {
+    .event-card-contain .event-card-wrap {
         flex-direction: column;
-        gap: 30px;
+        gap: 50px;
     }
 }
 

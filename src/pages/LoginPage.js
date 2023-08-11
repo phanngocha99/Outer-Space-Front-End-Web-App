@@ -10,22 +10,36 @@ export default function LoginPage() {
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
     const { setUserInfo } = useContext(UserContext);
+    const [status, setStatus] = useState('');
+
+    AbortSignal.timeout ??= function timeout(ms) {
+        const ctrl = new AbortController()
+        setTimeout(() => ctrl.abort(), ms)
+        return ctrl.signal
+    }
 
     async function login(e) {
         e.preventDefault();
         const response = await fetch('https://outer-space-api.vercel.app/login', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
+            signal: AbortSignal.timeout(5000), //5 second timeout
             body: JSON.stringify({ username, password }),
             credentials: 'include', //add cookie as a credentials in request
-        });
-        if (response.status === 200) {
-            response.json().then(userInfo => {
-                setUserInfo(userInfo);
-                setRedirect(true);
+        })
+            .then(response => {
+                if (response.status === 200) {
+                    response.json().then(userInfo => {
+                        setUserInfo(userInfo);
+                        setRedirect(true);
+                    })
+                } else if (response.status === 400) {
+                    setStatus("credentials-failed");
+                }
             })
-        } else
-            alert('Wrong Credentials')
+            .catch(e => {
+                setStatus("request-failed");
+            })
     }
 
     if (redirect) return <Navigate to={'/'} />
@@ -50,7 +64,7 @@ export default function LoginPage() {
                     <form className="login-form-contain">
                         <div className="input-group">
                             <label htmlFor="loginUser">Tài khoản:</label>
-                            <input type="text" id="loginUser" name="loginUser" placeholder='Enter Username' size={30} required
+                            <input type="text" id="loginUser" name="loginUser" placeholder="Hãy Nhập Tên Tài Khoản" size={30} required
                                 value={username}
                                 onChange={e => setUserName(e.target.value)}
                             />
@@ -82,15 +96,18 @@ export default function LoginPage() {
                             </div>
                         </div>
 
+                        {
+                            status === "request-failed" ? 'Đăng nhập chưa thành công. Vui lòng đăng nhập lại' : ''
+                        }
+
+                        {
+                            status === "credentials-failed" ? 'Tài khoản hoặc mật khẩu không đúng. Vui lòng đăng nhập lại' : ''
+                        }
+
                         <div className="login-submit">
                             <button type='button' className="submit-btn" id="submitBtn" onClick={login}>ĐĂNG NHẬP</button>
                         </div>
 
-                        <div className="messageLogin">
-                            <div id="sLogin" className="successLogin">Đăng nhập thành công !!!</div>
-                            <div id="eLogin" className="ErrLogin">Tên đăng nhập và mật khẩu không đúng !!!</div>
-                            <div id="cLogin" className="CatchLogin">Kiểm tra lại kết nối mạng !!!</div>
-                        </div>
                     </form>
                 </div>
 

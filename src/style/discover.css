@@ -82,9 +82,9 @@
 
 /* Tablet - Discover */
 @media only screen and (max-width: 1190px) {
-    .discover-card-contain {
+    .discover-card-contain .discover-card-wrap {
         flex-direction: column;
-        gap: 30px;
+        gap: 50px;
     }
 }
 

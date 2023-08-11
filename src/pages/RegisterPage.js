@@ -4,10 +4,12 @@ import '../style/register-page.css'
 export default function RegisterPage() {
     const [showPassword, setShowPassword] = useState('password');
     const [showEyeSlash, setShowEyeSlash] = useState(true);
+    const [status, setStatus] = useState('');
 
 
     const [username, setUserName] = useState('');
     const [password, setPassWord] = useState('');
+
     async function register() {
         const response = await fetch('https://outer-space-api.vercel.app/register', {
             method: 'POST',
@@ -15,9 +17,9 @@ export default function RegisterPage() {
             body: JSON.stringify({ username, password }),
         });
         if (response.status === 200) {
-            alert("Register successfull");
+            setStatus('success');
         } else {
-            alert("Register failed");
+            setStatus("failed");
         }
     }
 
@@ -42,7 +44,7 @@ export default function RegisterPage() {
                     <form className="register-form-contain" >
                         <div className="input-group">
                             <label htmlFor="registerUser">Tài khoản:</label>
-                            <input type="text" id="registerUser" name="registerUser" placeholder='Enter Username' size={30}
+                            <input type="text" id="registerUser" name="registerUser" placeholder="Hãy Nhập Tên Tài Khoản" size={30}
                                 value={username}
                                 onChange={e => setUserName(e.target.value)} />
                         </div>
@@ -72,15 +74,22 @@ export default function RegisterPage() {
                             </div>
                         </div>
 
+                        <div className="status">
+                            {
+                                status === "failed" ? 'Đăng ký tài khoản chưa thành công. Tên tài khoản đã tồn tại.' : ''
+                            }
+                        </div>
+
+                        <div className="status-success">
+                            {
+                                status === "success" ? 'Đăng ký tài khoản thành công. Vui lòng ĐĂNG NHẬP!' : ''
+                            }
+                        </div>
+
                         <div className="register-submit">
                             <button onClick={register} type='button' className="submit-btn" id="submitBtn">ĐĂNG KÝ</button>
                         </div>
 
-                        <div className="messageregister">
-                            <div id="sregister" className="successregister">Đăng ký thành công !!!</div>
-                            <div id="eregister" className="Errregister">Tên đăng nhập và mật khẩu không đúng !!!</div>
-                            <div id="cregister" className="Catchregister">Kiểm tra lại kết nối mạng !!!</div>
-                        </div>
                     </form>
                 </div>
 

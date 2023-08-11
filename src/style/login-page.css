@@ -126,6 +126,8 @@ form .input-group {
     margin-bottom: 50px;
     z-index: 5;
     background-color: black;
+    margin-top: 10px;
+
 }
 
 form .input-group input {
@@ -136,18 +138,19 @@ form .input-group input {
     border-bottom: 1px solid white;
     outline: none;
     color: #fff;
+    margin-top: 10px;
+
 }
 
 form .input-group label {
     font-size: 30px;
     position: absolute;
-    top: -35px;
+    top: -40px;
     left: 0;
     font-size: 25px;
     padding: 10px 0px;
     transition: 0.3s ease-out;
     cursor: pointer;
-    z-index: 5;
     color: #F26522;
     font-size: 25px;
 }
@@ -167,8 +170,15 @@ form .input-group label {
 
 
 
-.messageLogin {
-    margin-top: -20px;
+.status {
+    color: yellow;
+    margin-top: -30px;
+    margin-bottom: 10px;
+}
+
+.status-success {
+    color: greenyellow;
+    margin-bottom: 10px;
 }
 
 form .login-submit .submit-btn {

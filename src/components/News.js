@@ -33,14 +33,18 @@ export default function News() {
 
             <div className="news-card-contain">
 
-                <>
-                    {
-                        news.length > 0
-                        && news.map((news, index) => (
-                            <NewsContent key={index} {...news} />
-                        ))}
+                <div className="news-card-wrap">
+                    <>
+                        {
+                            news.length > 0
+                            && news.map((news, index) => (
+                                <NewsContent key={index} {...news} />
+                            ))
+                        }
 
-                </>
+                    </>
+                </div>
+
             </div >
         </div >
     )

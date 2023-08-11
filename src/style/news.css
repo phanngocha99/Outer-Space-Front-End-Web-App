@@ -118,7 +118,7 @@
 
 /* Tablet - News */
 @media only screen and (max-width: 1190px) {
-    .news .news-card-contain {
+    .news .news-card-contain .news-card-wrap {
         flex-direction: column;
         gap: 50px;
     }
