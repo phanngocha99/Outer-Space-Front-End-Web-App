@@ -41,7 +41,10 @@ export default function EditPost() {
         });
         if (response.status === 200) {
             setRedirect(true);
-        } else {
+        } else if (response.status === 413) {
+            alert('Đã xảy ra lỗi: ' + response.status + '- Kích thước tệp quá lớn. Hãy thử tạo lại bài.')
+        }
+        else {
             alert('Đã xảy ra lỗi: ' + response.status)
         }
     }

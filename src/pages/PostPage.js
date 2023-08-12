@@ -28,7 +28,7 @@ export default function PostPage() {
             {userInfo?.id === postInfo.author._id && (
                 <div className="edit-row">
                     <Link to={`/edit/post/${postInfo._id}`} className="edit-btn" >
-                        Edit this post
+                        Chỉnh sửa bài viết này
                     </Link>
                 </div>
             )}

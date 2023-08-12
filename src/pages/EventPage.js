@@ -29,7 +29,7 @@ export default function EventPage() {
             {userInfo?.id === eventInfo.author._id && (
                 <div className="edit-row">
                     <Link to={`/edit/event/${eventInfo._id}`} className="edit-btn" >
-                        Edit this post
+                        Chỉnh sửa bài viết này
                     </Link>
                 </div>
             )}

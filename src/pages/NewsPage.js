@@ -28,7 +28,7 @@ export default function NewsPage() {
             {userInfo?.id === newsInfo.author._id && (
                 <div className="edit-row">
                     <Link to={`/edit/news/${newsInfo._id}`} className="edit-btn" >
-                        Edit this post
+                        Chỉnh sửa bài viết này
                     </Link>
                 </div>
             )}
