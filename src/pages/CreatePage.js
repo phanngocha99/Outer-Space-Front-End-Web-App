@@ -10,17 +10,23 @@ export default function CreatePost() {
     const [title, setTitle] = useState("");
     const [summary, setSummary] = useState("");
     const [content, setContent] = useState("");
-    // const [files, setFiles] = useState("");
+    const [files, setFiles] = useState("");
     const [redirect, setRedirect] = useState(false);
 
     async function createNewPost() {
         console.log(category)
-        // data.set('file', files[0]);
+        const data = new FormData();
+        data.set('title', title);
+        data.set('summary', summary);
+        data.set('content', content);
+        data.set('file', files[0]);
+        if (category === "hãy chọn lĩnh vực muốn đăng bài") {
+            alert("Hãy chọn lĩnh vực muốn đăng bài")
+        }
         if (category === "khám phá") {
             const response = await fetch('https://outer-space-api.vercel.app/post', {
                 method: 'POST',
-                headers: { 'Content-type': 'application/json' },
-                body: JSON.stringify({ title, summary, content }),
+                body: data,
                 credentials: 'include',
             });
             if (response.status === 200) {
@@ -30,11 +36,11 @@ export default function CreatePost() {
             } else {
                 alert('Đã xảy ra lỗi: ' + response.status)
             }
+
         } else if (category === "tin tức") {
             const response = await fetch('https://outer-space-api.vercel.app/news', {
                 method: 'POST',
-                headers: { 'Content-type': 'application/json' },
-                body: JSON.stringify({ title, summary, content }),
+                body: data,
                 credentials: 'include',
             });
             if (response.status === 200) {
@@ -47,8 +53,7 @@ export default function CreatePost() {
         } else if (category === "sự kiện") {
             const response = await fetch('https://outer-space-api.vercel.app/event', {
                 method: 'POST',
-                headers: { 'Content-type': 'application/json' },
-                body: JSON.stringify({ title, summary, content }),
+                body: data,
                 credentials: 'include',
             });
             if (response.status === 200) {
@@ -79,8 +84,8 @@ export default function CreatePost() {
                     value={title} onChange={e => setTitle(e.target.value)} />
                 <input id='summary' type="text" placeholder="Summary" maxlength="50"
                     value={summary} onChange={e => setSummary(e.target.value)} />
-                {/* <input id='file' type="file"
-                    onChange={e => setFiles(e.target.files)} /> */}
+                <input id='file' type="file"
+                    onChange={e => setFiles(e.target.files)} />
             </form>
             <div className='quill-wrap'>
                 <div className='quill'>

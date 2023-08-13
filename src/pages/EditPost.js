@@ -9,7 +9,7 @@ export default function EditPost() {
     const [title, setTitle] = useState('');
     const [summary, setSummary] = useState('');
     const [content, setContent] = useState('');
-    // const [files, setFiles] = useState('');
+    const [files, setFiles] = useState('');
     const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
@@ -30,13 +30,12 @@ export default function EditPost() {
         data.set('summary', summary);
         data.set('content', content);
         data.set('id', id);
-        // if (files?.[0]) {
-        //     data.set('file', files?.[0]);
-        // }
+        if (files?.[0]) {
+            data.set('file', files?.[0]);
+        }
         const response = await fetch('https://outer-space-api.vercel.app/post', {
             method: 'PUT',
-            body: JSON.stringify({ title, summary, content, id }),
-            headers: { 'Content-type': 'application/json' },
+            body: data,
             credentials: 'include',
         });
         if (response.status === 200) {
@@ -54,6 +53,7 @@ export default function EditPost() {
     }
 
     return (
+
         <div className='edit-area'>
             <h1>CHỈNH SỬA BÀI VIẾT</h1>
             <form >
@@ -65,8 +65,8 @@ export default function EditPost() {
                     placeholder={'Summary'}
                     value={summary}
                     onChange={ev => setSummary(ev.target.value)} />
-                {/* <input type="file"
-                    onChange={ev => setFiles(ev.target.files)} /> */}
+                <input type="file"
+                    onChange={ev => setFiles(ev.target.files)} />
             </form>
             <div className='quill-wrap'>
                 <div className='quill'>

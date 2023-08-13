@@ -2,7 +2,6 @@ import '../style/event.css'
 import { formatISO9075 } from "date-fns";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import GenerateRandomImage from './RandomImage';
 
 export default function Event() {
     const [event, setEvent] = useState([]);
@@ -49,13 +48,13 @@ export default function Event() {
     )
 }
 
-function EventContent({ _id, title, summary, author, createdAt }) {
+function EventContent({ _id, title, summary, author, createdAt, cover }) {
     const oneDay = 24 * 60 * 60 * 1000;
     const remain = Math.round(Math.abs((new Date(createdAt) - new Date()) / oneDay))
     return (
         <Link to={`/event/${_id}`} className="event-card-box">
             <div className="event-card-inner">
-                <GenerateRandomImage />
+                <img src={'https://outer-space-api.vercel.app/' + cover} alt="event" />
                 <div className="event-card-info">
                     <div className="event-card-title">
                         {title}

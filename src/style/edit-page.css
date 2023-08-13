@@ -89,7 +89,7 @@
     color: #ffffff;
 }
 
-/* TODO */
-#file {
-    display: none;
+.edit-area #file {
+    font-size: 15px;
+    color: #fff;
 }

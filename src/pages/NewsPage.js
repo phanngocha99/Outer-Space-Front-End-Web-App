@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
 import { UserContext } from "../components/UserContext";
 import { Link } from 'react-router-dom';
-import GenerateRandomImage from "../components/RandomImage";
 
 export default function NewsPage() {
     const [newsInfo, setNewsInfo] = useState(null);
@@ -36,7 +35,7 @@ export default function NewsPage() {
             <h2>{newsInfo.summary}</h2>
 
             <div className="image">
-                <GenerateRandomImage />
+                <img src={`https://outer-space-api.vercel.app/${newsInfo.cover}`} alt="" />
             </div>
             <div className="content" dangerouslySetInnerHTML={{ __html: newsInfo.content }} />
         </div>

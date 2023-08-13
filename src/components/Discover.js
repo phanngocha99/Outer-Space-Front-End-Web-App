@@ -52,13 +52,12 @@ export default function Discover() {
     )
 }
 
-function DiscoverContent({ _id, title, summary, author, createdAt }) {
+function DiscoverContent({ _id, title, summary, author, createdAt, cover }) {
     return (
         <Link to={`/post/${_id}`
         } className="discover-card" >
             <div className='discover-card-img'>
-                <GenerateRandomImage />
-            </div>
+                <img src={'https://outer-space-api.vercel.app/' + cover} alt="event" />            </div>
             <div className="discover-text">
                 <h1 className='discover-text-title'>{title}</h1>
                 <div className='card-dicover-info'>

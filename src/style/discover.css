@@ -42,7 +42,7 @@
 
 .discover-card-contain .discover-card .discover-card-img img {
     object-fit: cover;
-    width: 100%;
+    width: 200%;
 }
 
 .discover-card-contain .discover-card:hover .discover-card-img img {

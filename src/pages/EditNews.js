@@ -9,7 +9,7 @@ export default function EditNews() {
     const [title, setTitle] = useState('');
     const [summary, setSummary] = useState('');
     const [content, setContent] = useState('');
-    // const [files, setFiles] = useState('');
+    const [files, setFiles] = useState('');
     const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
@@ -30,13 +30,12 @@ export default function EditNews() {
         data.set('summary', summary);
         data.set('content', content);
         data.set('id', id);
-        // if (files?.[0]) {
-        //     data.set('file', files?.[0]);
-        // }
+        if (files?.[0]) {
+            data.set('file', files?.[0]);
+        }
         const response = await fetch('https://outer-space-api.vercel.app/news', {
             method: 'PUT',
-            body: JSON.stringify({ title, summary, content, id }),
-            headers: { 'Content-type': 'application/json' },
+            body: data,
             credentials: 'include',
         });
         if (response.status === 200) {
@@ -65,8 +64,8 @@ export default function EditNews() {
                     placeholder={'Summary'}
                     value={summary}
                     onChange={ev => setSummary(ev.target.value)} />
-                {/* <input type="file"
-                    onChange={ev => setFiles(ev.target.files)} /> */}
+                <input type="file"
+                    onChange={ev => setFiles(ev.target.files)} />
             </form>
             <div className='quill-wrap'>
                 <div className='quill'>

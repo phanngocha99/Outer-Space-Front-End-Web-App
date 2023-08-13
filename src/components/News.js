@@ -2,7 +2,6 @@ import '../style/news.css'
 import { formatISO9075 } from "date-fns";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import GenerateRandomImage from './RandomImage'
 
 export default function News() {
     const [news, setNews] = useState([]);
@@ -52,7 +51,7 @@ export default function News() {
     )
 }
 
-function NewsContent({ _id, title, summary, author, createdAt }) {
+function NewsContent({ _id, title, summary, author, createdAt, cover }) {
     return (
         <Link to={`/news/${_id}`} className="news-card-box" >
             <div className='news-card-inner'>
