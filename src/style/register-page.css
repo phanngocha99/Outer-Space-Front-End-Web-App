@@ -138,6 +138,7 @@ form .input-group input {
     border-bottom: 1px solid white;
     outline: none;
     color: #fff;
+    margin-top: 10px;
 
 }
 
@@ -153,6 +154,7 @@ form .input-group label {
     color: #F26522;
     font-size: 25px;
 }
+
 
 .input-group .icon-eye {
     position: absolute;
@@ -171,10 +173,13 @@ form .input-group label {
 
 .status {
     color: yellow;
-    margin-top: -30px;
-    margin-bottom: 10px;
+    margin: -10px 50px 5px;
 }
 
+.status-success {
+    color: greenyellow;
+    margin-bottom: 10px;
+}
 
 form .register-submit .submit-btn {
     position: relative;

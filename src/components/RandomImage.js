@@ -18,7 +18,7 @@ export default function GenerateRandomImage() {
     }, []);
 
     return (
-        <img src={apod.hdurl} alt="news" />
+        <img src={apod.url} alt="news" />
     )
 
 };

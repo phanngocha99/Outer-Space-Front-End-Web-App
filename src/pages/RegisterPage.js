@@ -8,6 +8,7 @@ export default function RegisterPage() {
 
     const [username, setUserName] = useState('');
     const [password, setPassWord] = useState('');
+
     async function register() {
         const response = await fetch('https://outer-space-api.vercel.app/register', {
             method: 'POST',
@@ -18,6 +19,17 @@ export default function RegisterPage() {
             setStatus('success');
         } else {
             setStatus("failed");
+        }
+    }
+
+    function validateForm(valueName, ev) {
+        ev.preventDefault();
+        if (valueName.trim() == null || valueName.trim() == "" || valueName === " ") {
+            setStatus("space")
+            return false;
+        }
+        else {
+            register();
         }
     }
 
@@ -78,6 +90,12 @@ export default function RegisterPage() {
                             }
                         </div>
 
+                        <div className="status">
+                            {
+                                status === "space" ? 'Đăng ký tài khoản chưa thành công. Tên tài khoản không được có khoảng trống' : ''
+                            }
+                        </div>
+
                         <div className="status-success">
                             {
                                 status === "success" ? 'Đăng ký tài khoản thành công. Vui lòng ĐĂNG NHẬP!' : ''
@@ -85,9 +103,8 @@ export default function RegisterPage() {
                         </div>
 
                         <div className="register-submit">
-                            <button onClick={register} type='button' className="submit-btn" id="submitBtn">ĐĂNG KÝ</button>
+                            <button onClick={ev => validateForm(username, ev)} type='button' className="submit-btn" id="submitBtn">ĐĂNG KÝ</button>
                         </div>
-
                     </form>
                 </div>
 
