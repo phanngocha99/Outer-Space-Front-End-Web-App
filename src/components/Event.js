@@ -17,13 +17,13 @@ export default function Event() {
         <div id="event-home" className="event">
             <div className="title">
                 <div>SỰ KIỆN</div>
-                {/* <div>
-                    <a href="#banner-home">
+                <div>
+                    <Link to="/event">
                         <span className="btn">
                             XEM TẤT CẢ
                         </span>
-                    </a>
-                </div> */}
+                    </Link>
+                </div>
 
 
             </div>

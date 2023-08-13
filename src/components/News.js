@@ -18,13 +18,13 @@ export default function News() {
         <div id="news-home" className="news">
             <div className="title">
                 <div>TIN TỨC</div>
-                {/* <div>
-                    <a href="#banner-home">
+                <div>
+                    <Link to="/news">
                         <span className="btn">
                             XEM TẤT CẢ
                         </span>
-                    </a>
-                </div> */}
+                    </Link>
+                </div>
             </div>
 
             <p className="detail">
