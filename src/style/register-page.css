@@ -225,3 +225,24 @@ form .register-submit .submit-btn:hover {
     }
 
 }
+
+@media screen and (max-width:600px) {
+    .registerForm-contain {
+
+        width: 85%;
+    }
+
+    .registerForm-contain .input-group {
+        width: 60%;
+
+    }
+
+    .registerForm-contain .input-group input {
+        width: 100%;
+    }
+
+    .input-group .icon-eye {
+        left: 265px
+    }
+
+}

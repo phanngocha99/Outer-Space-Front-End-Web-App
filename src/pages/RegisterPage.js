@@ -92,7 +92,7 @@ export default function RegisterPage() {
 
                         <div className="status">
                             {
-                                status === "space" ? 'Đăng ký tài khoản chưa thành công. Tên tài khoản không được có khoảng trống' : ''
+                                status === "space" ? 'Đăng ký tài khoản chưa thành công. Vui lòng nhập tên tài khoản hợp lệ' : ''
                             }
                         </div>
 

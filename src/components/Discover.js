@@ -17,26 +17,28 @@ export default function Discover() {
         <div id="discover-home" className="bg-grey discover">
             <div className="title">
                 <div>KHÁM PHÁ</div>
-                <div>
-                    <Link to="/post">
-                        <span className="btn">
-                            XEM TẤT CẢ
-                        </span>
-                    </Link>
-                </div>
-                <div style={{ marginTop: "10px" }}>
-                    <Link to="/apod">
-                        <span className="btn">
-                            ẢNH THIÊN VĂN HÔM NAY (NASA)
-                        </span>
-                    </Link>
-                </div>
-                <div style={{ marginTop: "10px" }}>
-                    <Link to="/your-apod">
-                        <span className="btn">
-                            ẢNH THIÊN VĂN NGÀY SINH CỦA BẠN
-                        </span>
-                    </Link>
+                <div className='more-wrap'>
+                    <div>
+                        <Link to="/post">
+                            <span className="btn">
+                                XEM TẤT CẢ
+                            </span>
+                        </Link>
+                    </div>
+                    <div >
+                        <Link to="/apod">
+                            <span className="btn">
+                                ẢNH THIÊN VĂN HÔM NAY (NASA)
+                            </span>
+                        </Link>
+                    </div>
+                    <div>
+                        <Link to="/your-apod">
+                            <span className="btn">
+                                ẢNH THIÊN VĂN NGÀY SINH CỦA BẠN
+                            </span>
+                        </Link>
+                    </div>
                 </div>
             </div>
 

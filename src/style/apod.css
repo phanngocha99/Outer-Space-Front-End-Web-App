@@ -64,12 +64,17 @@
     outline: none;
     color: #fff;
     background-color: #f2642276;
-    border-radius: 50%;
-    width: 30px;
+    border-radius: 10px;
+    width: 50px;
     height: 30px;
     font-size: 15px;
     cursor: pointer;
     margin: 10px;
+}
+
+.apod-wrap .date button:hover {
+    background-color: #F26522;
+
 }
 
 .apod-wrap .explanation {

@@ -127,7 +127,6 @@ form .input-group {
     z-index: 5;
     background-color: black;
     margin-top: 10px;
-
 }
 
 form .input-group input {
@@ -138,7 +137,6 @@ form .input-group input {
     border-bottom: 1px solid white;
     outline: none;
     color: #fff;
-    margin-top: 10px;
 
 }
 
@@ -173,11 +171,6 @@ form .input-group label {
 .status {
     color: yellow;
     margin-top: -30px;
-    margin-bottom: 10px;
-}
-
-.status-success {
-    color: greenyellow;
     margin-bottom: 10px;
 }
 
@@ -222,6 +215,27 @@ form .login-submit .submit-btn:hover {
         border-right: none;
         border-bottom: dashed 1px #f26422bc;
 
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .loginForm-contain {
+
+        width: 85%;
+    }
+
+    .loginForm-contain .input-group {
+        width: 60%;
+
+    }
+
+    .loginForm-contain .input-group input {
+        width: 100%;
+    }
+
+    .input-group .icon-eye {
+        left: 265px
     }
 
 }

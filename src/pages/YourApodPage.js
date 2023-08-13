@@ -9,6 +9,7 @@ export default function YourApod() {
 
 
     async function fetchImage() {
+        e.preventDefault();
         const APOD_RESPONSE = await fetch("https://api.nasa.gov/planetary/apod?" + "api_key=" + API_KEY + "&date=" + date)
         if (APOD_RESPONSE.status == 200) {
             const APOD_DATA = APOD_RESPONSE.json();
@@ -25,9 +26,6 @@ export default function YourApod() {
         }
     }
 
-    if (date) {
-        fetchImage();
-    }
 
     return (
         <div className="apod-wrap">
@@ -35,8 +33,8 @@ export default function YourApod() {
                 <h1>Astromomy Picture of Your BirthDay </h1>
                 <div class="apod">
                     <div class="date">
-                        <input type="date" name="date" id="date" onChange={e => setDate(e.target.value)} />
-                        <button><i class='bx bx-search-alt-2'></i></button>
+                        <input type="date" name="date" id="date" onChange={(e) => { setDate(e.target.value) }} />
+                        <button onClick={(e) => fetchImage(e)}>{"Tìm "} <i class='bx bx-search-alt-2'></i>  </button>
                     </div>
 
                     {
