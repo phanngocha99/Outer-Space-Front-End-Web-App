@@ -12,6 +12,11 @@ import NewsPage from './pages/NewsPage';
 import EventPage from './pages/EventPage';
 import EditEvent from './pages/EditEvent';
 import EditNews from './pages/EditNews';
+import NewsAllPage from './pages/NewsAllPage';
+import DiscoverAllPage from './pages/DiscoverAllPage';
+import EventAllPage from './pages/EventAllPage';
+import APOD from './pages/apodPage';
+import YourApod from './pages/YourApodPage';
 
 
 function App() {
@@ -29,6 +34,11 @@ function App() {
           <Route path={'/edit/post/:id'} element={<EditPost />} />
           <Route path={'/edit/event/:id'} element={<EditEvent />} />
           <Route path={'/edit/news/:id'} element={<EditNews />} />
+          <Route path={'/news'} element={<NewsAllPage />} />
+          <Route path={'/post'} element={<DiscoverAllPage />} />
+          <Route path={'/event'} element={<EventAllPage />} />
+          <Route path={'/apod'} element={<APOD />} />
+          <Route path={'/your-apod'} element={<YourApod />} />
         </Route>
       </Routes>
     </UserContextProvider >

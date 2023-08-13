@@ -1,0 +1,91 @@
+.all-page {
+    margin-top: 150px;
+}
+
+.all-page .title {
+    font-size: 30px;
+}
+
+
+.all-page .card-contain {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.all-page .card-box {
+    display: flex;
+    flex-direction: row;
+    margin: 0px 50px 0px;
+    background-color: #ffffff43;
+}
+
+
+.all-page .card-box:hover {
+    background-color: #f2642247;
+}
+
+.all-page .card-box .img-wrap {
+    border: 1px solid #fff;
+    width: 30%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.all-page .card-box:hover .img-wrap {
+    border: 1px solid #F26522;
+}
+
+.all-page .card-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.2s;
+}
+
+.all-page .card-box:hover img {
+    transform: scale(1.5);
+}
+
+.all-page .card-box .text {
+    padding: 20px;
+    width: 70%;
+
+}
+
+
+.all-page .card-box .text .text-title {
+    font-size: 30px;
+    color: #F26522;
+}
+
+.all-page .card-box .text .text-info {
+    display: flex;
+    font-size: 15px;
+    color: wheat;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.all-page .card-box .text .text-details {
+    font-size: 15px;
+    color: #fff;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 510px) {
+    .all-page .card-box {
+        flex-direction: column;
+    }
+
+    .all-page .card-box .img-wrap {
+        width: 100%;
+    }
+
+    .all-page .card-box .text {
+        width: 100%;
+
+    }
+}

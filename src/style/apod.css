@@ -1,0 +1,95 @@
+.apod-wrap .container {
+    background-color: #3a302c65;
+}
+
+.apod-wrap .container>h1 {
+    margin-top: 200px;
+    margin-bottom: 20px;
+    padding: 30px;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #F26522;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.apod-wrap .apod {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.apod-wrap .information {
+    width: 90%;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.apod-wrap .information h1 {
+    font-size: 35px;
+    padding: 20px 0 10px;
+    color: #fff;
+
+}
+
+.apod-wrap .information h2 {
+    font-size: 20px;
+    padding: 0px 0 10px;
+    color: #F26522;
+}
+
+.apod-wrap .date input {
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 20px;
+    background-color: #f2642276;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+.apod-wrap .date button {
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #f2642276;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.apod-wrap .explanation {
+    width: 90%;
+    margin: 50px;
+    font-size: 20px;
+    text-align: justify;
+    line-height: 45px;
+    color: #fff;
+}
+
+.apod-wrap .image {
+    width: 90%;
+    margin: 30px auto 0px;
+    text-align: center;
+}
+
+.apod-wrap .image img {
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
+    margin: 10px;
+}
