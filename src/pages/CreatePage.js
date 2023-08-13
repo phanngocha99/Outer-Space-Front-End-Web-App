@@ -6,7 +6,7 @@ import Editor from '../components/Editor';
 
 
 export default function CreatePost() {
-    const [category, setCategory] = useState("news");
+    const [category, setCategory] = useState("hãy chọn lĩnh vực muốn đăng bài");
     const [title, setTitle] = useState("");
     const [summary, setSummary] = useState("");
     const [content, setContent] = useState("");
