@@ -56,7 +56,7 @@ function NewsContent({ _id, title, summary, author, createdAt, cover }) {
         <Link to={`/news/${_id}`} className="news-card-box" >
             <div className='news-card-inner'>
                 <div className="news-card-behind"></div>
-                <GenerateRandomImage />
+                <img src={'https://outer-space-api.vercel.app/' + cover} alt="news" />
                 <div className="news-card-front">
                     <p className='news-card-details'>{summary}</p>
                     <i className='bx bx-right-arrow-alt'></i>

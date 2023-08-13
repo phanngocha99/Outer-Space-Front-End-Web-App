@@ -2,7 +2,6 @@ import '../style/discover.css'
 import { formatISO9075 } from "date-fns";
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-import GenerateRandomImage from './RandomImage';
 
 export default function Discover() {
     const [posts, setPosts] = useState([]);
