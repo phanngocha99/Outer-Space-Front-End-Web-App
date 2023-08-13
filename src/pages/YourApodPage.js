@@ -8,7 +8,7 @@ export default function YourApod() {
     const [date, setDate] = useState(null);
 
 
-    async function fetchImage() {
+    async function fetchImage(e) {
         e.preventDefault();
         const APOD_RESPONSE = await fetch("https://api.nasa.gov/planetary/apod?" + "api_key=" + API_KEY + "&date=" + date)
         if (APOD_RESPONSE.status == 200) {
