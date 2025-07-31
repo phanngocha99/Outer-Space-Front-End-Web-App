@@ -1,4 +1,4 @@
-# outer-space
+# Outer-Space-Front-End-Web-App
 
 🌸 [HTML-CSS-React] An Astronomy website
 
