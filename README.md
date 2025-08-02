@@ -2,16 +2,8 @@
 
 🌸 [HTML-CSS-React] An Astronomy website
 
-📌 https://outer-space-psi.vercel.app/ 
-
 ## Demo
 ![Demo](https://github.com/phanngocha99/Outer-Space-Front-End-Web-App/blob/main/public/demo.png)
-
-## Related Link
-
-📌 GitHub repository: 
-- Frondend: https://github.com/HiImHa/outer-space
-- BackEnd: https://github.com/HiImHa/outer-space-api \
 
 ## Features
 🌟This website first will navigate you to **Hompage**:
